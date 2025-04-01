@@ -1,0 +1,71 @@
+﻿@page
+@model MyShop.Pages.AboutModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автобусная Компания "Столичная"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+
+    <div class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+
+        <main>
+            <h2>О компании</h2>
+            <p>
+                Автобусная Компания «СТОЛИЧНАЯ» была образована 30 апреля 2004 года. Основной вид деятельности — оказание транспортных услуг по перевозке пассажиров на комфортабельных автобусах по России и Европе. Мы предлагаем пассажирам безупречный сервис, комфорт и абсолютную безопасность в пути.
+            </p>
+
+            <iframe width="860" height="515" src="https://www.youtube.com/embed/ZOWOnIDSNic"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               
+
+            <h2 class="h2small">Мэр Москвы открыл новый современный автовокзал Южные ворота.</h2>
+            <div class="image-gallery">
+            <p><img src="/images/mer1.png" alt="Мэр Москвы открыл новый современный автовокзал Южные ворота"</p>
+                <p><img src="/images/Buses.png" alt="Мэр Москвы открыл новый современный автовокзал Южные ворота"</p>
+            </div>
+            <p>Наша компания обладает необходимыми ресурсами для оказания полного комплекса услуг по организации перевозок пассажиров, начиная от диспетчерской службы и заканчивая профессиональным водительским составом имеющим опыт работы не менее 7 лет на автобусах данного класса. Пассажирские перевозки организованны на базе государственных требований, в соответствии с действующим законодательством РФ и получена лицензия на данный вид деятельности. Недавно в структуру АК «СТОЛИЧНАЯ» вошли еще две фирмы «ДонАвтоЛайн» и «ЮЖНЫЙ ЭКСПРЕСС», специализирующиеся на маршрутах по Черноморскому побережью.</p>
+            </main>
+
+
+    
+    </div>
+
+    <footer>
+        <hr>
+        <p>© Все права защищены</p>
+    </footer>
+
+
+</body>
+</html>

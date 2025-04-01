@@ -1,0 +1,103 @@
+﻿@page
+@model MyShop.Pages.ContactsModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автобусная Компания "Столичная"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+
+    <div class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        <div class="contact-form">
+           @*  <h2>Напишите нам</h2>
+            <form>
+                <div class="form-row">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com">
+                </div>
+
+                <div class="form-row">
+                    <label for="subject">Тема:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Введите тему сообщения">
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Введите ваше сообщение"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+
+                <div class="form-row">
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+ *@
+            <h2>Контакты</h2>
+            <p><strong>Контактный номер телефона компании:</strong> +7 (917) 551-11-11 </p>
+            <p>
+                <strong>Адрес:</strong> г. Москва
+                Микрорайон Опытное поле, д. 11
+            </p>
+            <p><strong>Вконтакте: </strong><a href="https://vk.com/moscowbus_ru" target="_blank">https://vk.com/moscowbus_ru</a></p>
+            <br>
+            <h2><strong>Информация о перевозчике</strong></h2>
+            <p>
+                Общество с ограниченной ответственностью
+                Автобусная Компания «СТОЛИЧНАЯ»
+            </p>
+            <p><strong>ИНН:</strong>7709543240 </p>
+            <p><strong>ОГРН:</strong>1047796309263</p>
+     
+
+        </div>
+        <div class="map-container">
+            <a href="https://yandex.ru/maps/21651/kotelniki/?from=api-maps&ll=37.861305%2C55.672236&utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:15px;position:absolute;top:0px;"></a>
+            <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=37.861305%2C55.672236&z=15.92&mode=search&text=%D0%93.%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,%20%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%20%D0%9E%D0%BF%D1%8B%D1%82%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%B5,%20%D0%B4.%2011&utm_medium=mapframe&utm_source=maps" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+        </div>
+    </div>
+
+
+    <footer>
+        <hr>
+        <p>© Все права защищены</p>
+    </footer>
+
+</body>
+</html>

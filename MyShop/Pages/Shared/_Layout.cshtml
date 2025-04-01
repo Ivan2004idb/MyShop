@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WEB3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WEB3.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Логотип Столичная" class="logo-image">
+            </div>
+            <div class="site-name">Автобусная компания "Столичная"</div>
+            <div class="auth-buttons">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Если пользователь авторизован, приветствуем -->
+                    <span>Здравствуйте, @User.Identity.Name</span>
+                    <a href="/Cart" class="auth-button">Корзина</a>
+                    <form action="/Account/Logout" method="post" style="display:inline;">
+                        <button type="submit" class="auth-button">Выйти</button>
+                    </form>
+                }
+                else
+                {
+                    <!-- Если не авторизован - показываем кнопки -->
+                    <a href="/Login" class="auth-button">Вход</a>
+                    <a href="/Register" class="auth-button">Регистрация</a>
+                }
+            </div>
+        </div>
+        <nav class="top-nav">
+            <a href="/Service">Вопросы и ответы</a>
+            <a href="/Certificates">Расписание</a>
+            <a href="/Production">Наши автобусы</a>
+            <form class="search-form" onsubmit="return false;">
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Поиск по сайту"
+                       aria-label="Поиск по сайту"
+                       oninput="performSearch(this.value)">
+                <div id="searchResults" class="search-results"></div>
+            </form>
+
+        </nav>
+    </header>
+
+
+    <div class="full-width">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="/js/search.js"></script>
+
+    <script src="js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

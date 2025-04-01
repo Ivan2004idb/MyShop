@@ -1,0 +1,83 @@
+﻿@page
+@model MyShop.Pages.LoginModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автобусная Компания "Столичная"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+    <div class="content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/Feedback">Отзывы</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+        else
+        {
+            <aside class="sidebar">
+                <a href="/Index">Главная</a>
+                <a href="/About">О нас</a>
+                <a href="/Catalog">Каталог</a>
+                <a href="/Contacts">Контакты</a>
+                <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+            </aside>
+        }
+
+        <div class="full-width">
+            <main>
+                <div class="feedback-form">
+                <h2>Вход</h2>
+
+                <form method="post">
+                        <div class="form-group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                            <br />
+                        </div>
+
+                            <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                            <br />
+                        </div>
+
+                    <button type="submit">Войти</button>
+                </form>
+                </div>
+                @if (!ModelState.IsValid)
+                {
+                    <div class="error">
+                        @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <p>@error.ErrorMessage</p>
+                        }
+                    </div>
+                }
+            </main>
+        </div>
+
+
+       
+    </div>
+
+    <footer>
+        <hr>
+        <p>© Все права защищены</p>
+    </footer>
+
+
+</body>
+</html>

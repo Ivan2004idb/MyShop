@@ -1,0 +1,76 @@
+﻿@page
+@model MyShop.Pages.FeedbackModel
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратная связь</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+
+    <div class="content">
+        <aside class="sidebar">
+            <a href="/Index">Главная</a>
+            <a href="/About">О нас</a>
+            <a href="/Catalog">Каталог</a>
+            <a href="/Contacts">Контакты</a>
+            <a href="/Feedback">Отзывы</a>
+            <a href="/pdf/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
+        </aside>
+
+        <main>
+        <form method="post">
+            <div class="feedback-form">
+                <!-- Однострочное текстовое поле -->
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <!-- Многострочное поле для текста -->
+                <div class="form-group">
+                    <label for="comment">Email:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                </div>
+
+                <!-- Радио-кнопки для рейтинга -->
+                <div class="form-group">
+                    <label>Рейтинг сайта:</label>
+                    <label><input type="radio" name="rating" value="excellent"> Отлично</label>
+                    <label><input type="radio" name="rating" value="good"> Хорошо</label>
+                    <label><input type="radio" name="rating" value="average"> Средне</label>
+                </div>
+
+                <!-- Флажок для подписки -->
+                <div class="form-group">
+                    <label><input type="checkbox" name="subscribe"> Подписаться на новости</label>
+                </div>
+
+                <!-- Прокручивающееся текстовое поле для предложений -->
+                <div class="form-group">
+                    <label for="suggestions">Ваши предложения:</label>
+                    <textarea id="suggestions" name="suggestions" rows="3" style="overflow-y: scroll;"></textarea>
+                </div>
+
+                <!-- Кнопка отправки -->
+                <div class="form-group">
+                    <button type="submit">Отправить отзыв</button>
+                </div>
+            </form>
+
+        </main>
+    </div>
+
+    <footer>
+        <hr>
+        <p>© Все права защищены</p>
+    </footer>
+
+</body>
+</html>
